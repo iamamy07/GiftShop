@@ -1,0 +1,41 @@
+footer {
+  background: #111;
+  border: none;
+  border-top: 2px solid #222;
+  padding: 0.1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: none;
+  min-height: 0px;
+}
+img {
+  max-width: 110%;
+  height: auto;
+  margin-right:10px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+footer li {
+  display: inline;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #4f8cff;
+  text-decoration: underline;
+}
