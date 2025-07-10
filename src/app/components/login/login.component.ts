@@ -20,7 +20,7 @@ oktaSignin: any;
         pkce:true,
         issuer: myAppConfig.oidc.issuer,
         scopes: myAppConfig.oidc.scopes,
-         useInteractionCodeFlow: false // 👈 ADD THIS LINE to fix the error
+        //  useInteractionCodeFlow: false // 👈 ADD THIS LINE to fix the error
       },
     });
    }

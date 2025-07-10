@@ -22,7 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@okta/okta-angular": "^5.2.0",
     "@okta/okta-auth-js": "^6.4.0",
-    "@okta/okta-signin-widget": "^6.2.0",
+    "@okta/okta-signin-widget": "^5.5.3",
     "bootstrap": "^5.3.6",
     "rxjs": "~7.5.0",
     "stripe": "^18.2.1",
