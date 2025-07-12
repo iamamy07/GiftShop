@@ -1,7 +1,7 @@
 .contact-us-container {
   max-width: 500px;
-  margin: 7rem auto 2rem auto;
-  padding: 2rem 2.5rem;
+  margin: 10rem auto 2rem auto;
+  padding: 5rem 2.5rem;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(79, 140, 255, 0.10);
@@ -94,7 +94,6 @@ a{
   transform: translateY(-2px) scale(1.03);
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   .contact-us-container {
     padding: 1rem 0.5rem;

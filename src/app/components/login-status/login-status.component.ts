@@ -1,47 +1,39 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
-import { OktaAuth } from '@okta/okta-auth-js';
 
+import {DOCUMENT} from '@angular/common';
+import {Component, Inject} from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-login-status',
   templateUrl: './login-status.component.html',
   styleUrls: ['./login-status.component.css']
 })
-export class LoginStatusComponent implements OnInit {
-  isAuthenticated: boolean | undefined = false;
-  userFullName: string = '';
+export class LoginStatusComponent {
+  isAuthenticated: boolean = false;
+  menuOpen: boolean = false;
+  profileJson:String | undefined;
+  userEmail: string | undefined;
   storage: Storage = sessionStorage; 
-
-
-  constructor(
-    private oktaAuthService: OktaAuthStateService,
-    @Inject(OKTA_AUTH) private oktaAuth: OktaAuth
-  ) { }
-
-  ngOnInit(): void {
-    this.oktaAuthService.authState$.subscribe(
-      (result) => {
-        this.isAuthenticated = result.isAuthenticated;
-        if (this.isAuthenticated) {
-          this.getUserDetails();
-        }
+  constructor(private auth:AuthService,@Inject(DOCUMENT) private doc: Document) {}
+  ngOnInit():void {
+    this.auth.isAuthenticated$.subscribe(
+      (isAuthenticated:boolean) => {
+        this.isAuthenticated = isAuthenticated;
+        console.log('isAuthenticated:', this.isAuthenticated);
+      }
+    );
+    this.auth.user$.subscribe(
+      (user) => {
+          this.userEmail = user?.email;
+          this.storage.setItem('userEmail', JSON.stringify(this.userEmail));
+          console.log('userEmail:', this.userEmail);      
       }
     );
   }
-
-  getUserDetails() {
-    if (this.isAuthenticated) {
-      this.oktaAuth.getUser().then(
-        (res) => {
-          this.userFullName = res.name as string;
-          const theEmail = res.email ;
-          this.storage.setItem('userEmail', JSON.stringify(theEmail));
-        }
-      );
-    }
+  login(){
+    this.auth.loginWithRedirect();
+  }
+  logout(): void {
+    this.auth.logout({ logoutParams: {returnTo: this.doc.location.origin} });
   }
 
-  logOut() {
-    this.oktaAuth.signOut();
-  }
 }

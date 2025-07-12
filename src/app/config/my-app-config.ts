@@ -1,19 +1,17 @@
-// export default {
-//   oidc: {
-//     clientId: '0oaowl5n40f0VbDi95d7',
-//     issuer: 'https://dev-26468971.okta.com/oauth2/default',
-//     redirectUri: 'https://localhost:4200/login/callback',
-//     scopes: ['openid', 'profile', 'email']
-//   }
-// }
+import { environment } from "src/environments/environment";
 
 export default {
-  oidc: {
-    clientId: '0oaowl5n40f0VbDi95d7',
-    issuer: 'https://dev-26468971.okta.com/oauth2/default',
-    redirectUri: 'https://localhost:4200/login/callback',
-    scopes: ['openid', 'profile', 'email'],
-    pkce: true,                          // ✅ required for SPA
-    useInteractionCodeFlow: false       // ✅ disables IDX-only feature
-  }
+  auth:{
+    domain: environment.auth0.domain,
+    clientId:environment.auth0.clientId,
+    authorizationParams:{
+      redirect_uri:environment.auth0.redirectUri,
+      audience:environment.auth0.audience
+    },
+  },
+  httpInterceptor:{
+    allowedList:environment.auth0.allowedList,
+  },
 }
+
+

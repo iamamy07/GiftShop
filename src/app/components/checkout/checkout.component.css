@@ -1,7 +1,7 @@
 .main-content {
   min-height: 100vh;
   background: linear-gradient(120deg, #e3f0ff 0%, #e6e6fa 100%);
-  padding: 5rem 0 2rem 0; /* Top padding for navbar */
+  padding: 10rem 0 2rem 0; /* Top padding for navbar */
   display: flex;
   justify-content: center;
   align-items: flex-start;

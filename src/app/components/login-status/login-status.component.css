@@ -30,6 +30,8 @@
   -webkit-border-radius:3px;
   -moz-border-radius:3px;
   border-radius:3px;
+    font-size: larger;
+    color: #fff;
   -webkit-transition:all .5s ease;
   -o-transition:all .5s ease;
   -moz-transition:all .5s ease;

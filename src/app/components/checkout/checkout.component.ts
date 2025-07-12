@@ -107,29 +107,6 @@ export class CheckoutComponent implements OnInit {
       })
     });
 
-    /*
-    // populate credit card months
-
-    const startMonth: number = new Date().getMonth() + 1;
-    console.log("startMonth: " + startMonth);
-
-    this.formService.getCreditCardMonths(startMonth).subscribe(
-      data => {
-        console.log("Retrieved credit card months: " + JSON.stringify(data));
-        this.creditCardMonths = data;
-      }
-    );
-
-    // populate credit card years
-
-    this.formService.getCreditCardYears().subscribe(
-      data => {
-        console.log("Retrieved credit card years: " + JSON.stringify(data));
-        this.creditCardYears = data;
-      }
-    );
-    */
-
     // populate countries
 
     this.formService.getCountries().subscribe(
@@ -240,15 +217,6 @@ export class CheckoutComponent implements OnInit {
     // get cart items
     const cartItems = this.cartService.cartItems;
 
-    // create orderItems from cartItems
-    // - long way
-    /*
-    let orderItems: OrderItem[] = [];
-    for (let i=0; i < cartItems.length; i++) {
-      orderItems[i] = new OrderItem(cartItems[i]);
-    }
-    */
-
     // - short way of doing the same thingy
     let orderItems: OrderItem[] = cartItems.map(tempCartItem => new OrderItem(tempCartItem));
 
@@ -358,33 +326,6 @@ export class CheckoutComponent implements OnInit {
     this.router.navigateByUrl("/products");
   }
 
-  /*
-  handleMonthsAndYears() {
-
-    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
-
-    const currentYear: number = new Date().getFullYear();
-    const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
-
-    // if the current year equals the selected year, then start with the current month
-
-    let startMonth: number;
-
-    if (currentYear === selectedYear) {
-      startMonth = new Date().getMonth() + 1;
-    }
-    else {
-      startMonth = 1;
-    }
-
-    this.formService.getCreditCardMonths(startMonth).subscribe(
-      data => {
-        console.log("Retrieved credit card months: " + JSON.stringify(data));
-        this.creditCardMonths = data;
-      }
-    );
-  }
-  */
  
   getStates(formGroupName: string) {
 

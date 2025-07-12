@@ -3,7 +3,7 @@
   min-height: 100vh;
   background: linear-gradient(120deg, #e3f0ff 0%, #e6e6fa 100%);
   padding: 2rem 0;
-  padding-top: 5rem; /* Add this line (80px = 5rem, adjust as needed) */
+  padding-top: 7rem; /* Add this line (80px = 5rem, adjust as needed) */
   display: flex;
   justify-content: center;
   align-items: flex-start;

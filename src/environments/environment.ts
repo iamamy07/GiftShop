@@ -5,7 +5,17 @@
 export const environment = {
   production: false,
   giftshopApiUrl: 'https://localhost:8443/api',
-  stripePublishableKey: 'pk_test_51RfwNMDHqNuUO8lE5y83go1nFq0LLWBD0batsXnrqAVj0mFFhVb9PNqtnswWjPggV0XI0jAmZpEgtqsfdAB1Rurk00y6ZVNKWH'
+  stripePublishableKey: 'pk_test_51RfwNMDHqNuUO8lE5y83go1nFq0LLWBD0batsXnrqAVj0mFFhVb9PNqtnswWjPggV0XI0jAmZpEgtqsfdAB1Rurk00y6ZVNKWH',
+  auth0: {
+    domain: 'dev-dmzr4zwxs6r5zfxc.us.auth0.com',
+    clientId: 'Qw3BttxtZt6MSKcQ983JbuJNwoz8Sxt2',
+    redirectUri: 'https://localhost:4200/login/callback',
+    audience: 'http://localhost:8080',
+    allowedList: [
+      'http://localhost:8080/api/orders/**',
+      'http://localhost:8080/api/checkout/purchase',
+    ]
+  }
 };
 
 /*
