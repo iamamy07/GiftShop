@@ -20,7 +20,7 @@
 }
 
 .detail-img {
-  width: 320px;              /* Larger image */
+  width: 400px;            
   height: 320px;
   object-fit: cover;
   border-radius: 14px;
