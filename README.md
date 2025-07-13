@@ -1,27 +1,74 @@
-# AngularEcommerce
+# 🎁 Gift Shop - Full Stack E-Commerce Platform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.7.
+**Gift Shop** is an e-commerce application where users can browse, search, add items to cart, and securely place orders using Stripe.  
+This is a **full-stack project** built with Angular, Spring Boot, and MySQL — showcasing robust authentication, secure checkout, and modern UI/UX.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔗 Live Demo
 
-## Code scaffolding
+👉 [Visit Gift Shop](https://exquisite-empanada-17d62b.netlify.app/products)
+👉 [Demo Video](https://drive.google.com/file/d/1XZUu_3EKifYICKTogIaDa4A9b5V0YalI/view?usp=sharing)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🚀 Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🛍️ Shopping Experience
+- Filter products by 4 categories
+- Product detail view with description and Add to Cart
+- Live cart count in the navbar
+- Real-time search across all categories
+- Pagination with adjustable page size
 
-## Running unit tests
+### 🛒 Cart & Checkout
+- View cart details with increment/decrement/remove functionality
+- Real-time summary updates with total price and quantity
+- Secure checkout form for billing/shipping and payment info
+- Order confirmation with tracking number
+- View past orders in **My Orders** section
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔐 Authentication
+- OAuth0-based secure login
+- Supports: Email/Password, Google, and Facebook logins
+- Redirects unauthenticated users to login and returns them post-login
 
-## Running end-to-end tests
+### 💳 Payment
+- Integrated with **Stripe API** (Test keys)
+- Validates card inputs before processing
+- Confirmation of order on successful payment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 📦 Tech Stack
 
-## Further help
+| Layer       | Technology                    |
+|-------------|-------------------------------|
+| Frontend    | Angular + Bootstrap + CSS     |
+| Backend     | Spring Boot (Java)            |
+| Database    | MySQL (FreeSQLDatabase.com)   |
+| Auth        | OAuth0 (Email/Google/Facebook)|
+| Payment     | Stripe API                    |
+| Hosting     | Netlify (Frontend), Render (Backend) |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🔒 Security & Hosting
+
+- Fully deployed on **HTTPS** with SSL/TLS enabled
+- JWT-based authorization and route protection
+
+---
+
+## 📫 Contact
+
+Feel free to reach out for feedback or collaboration:  
+📧 **work.iamamy07@gmail.com**
+
+---
+
+## 📌 Note
+
+This is a **demo project** using test payment credentials.  
+Live features are fully functional — no need to run locally.
+
+---
+
