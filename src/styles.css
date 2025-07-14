@@ -3,6 +3,9 @@
  * Common CSS
  * ----------------------------
  */
+
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -64,6 +67,22 @@ h1,h2,h3,h4,h5,h6{
   font-weight:700;
   margin:0;
   line-height:1.2
+}
+.page-wrapper {
+  min-height: 100vh; /* ensures full height */
+  display: flex;
+  flex-direction: column;
+}
+
+router-outlet + * {
+  flex: 1;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 15px;
+  text-align: center;
+  margin-top: auto; /* push footer to bottom */
 }
 
 h1{

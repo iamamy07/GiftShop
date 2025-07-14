@@ -1,4 +1,4 @@
-<div class="main-content">
+<!-- <div class="main-content">
   <div class="section-content section-content-p30">
     <h3>Your Orders</h3>
 
@@ -40,6 +40,44 @@
       </div>
     </div>
 
+
+  </div>
+</div> -->
+
+
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <h3>Your Orders</h3>
+
+    <!-- Spinner when loading -->
+    <div *ngIf="isLoading" class="text-center my-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Orders Table -->
+    <div *ngIf="!isLoading && orderHistoryList.length > 0">
+      <table class="table table-bordered">
+        <tr>
+          <th width="20%">Order Tracking Number</th>
+          <th width="10%">Total Price</th>
+          <th width="10%">Total Quantity</th>
+          <th width="10%">Date</th>
+        </tr>
+        <tr *ngFor="let tempOrderHistory of orderHistoryList">
+          <td>{{ tempOrderHistory.orderTrackingNumber }}</td>
+          <td>{{ tempOrderHistory.totalPrice | currency:'USD' }}</td>
+          <td>{{ tempOrderHistory.totalQuantity }}</td>
+          <td>{{ tempOrderHistory.dateCreated | date:'medium' }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- No Orders -->
+    <div *ngIf="!isLoading && orderHistoryList.length === 0" class="alert alert-warning col-md-12" role="alert">
+      No Orders Found.
+    </div>
 
   </div>
 </div>
